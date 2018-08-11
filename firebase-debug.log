@@ -1,0 +1,37 @@
+[debug] [2018-08-11T09:28:23.333Z] ----------------------------------------------------------------------
+[debug] [2018-08-11T09:28:23.337Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2018-08-11T09:28:23.337Z] CLI Version:   4.0.3
+[debug] [2018-08-11T09:28:23.337Z] Platform:      darwin
+[debug] [2018-08-11T09:28:23.337Z] Node Version:  v8.11.3
+[debug] [2018-08-11T09:28:23.337Z] Time:          Sat Aug 11 2018 18:28:23 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:23.337Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-11T09:28:23.347Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-11T09:28:23.347Z] > authorizing via signed-in user
+[debug] [2018-08-11T09:28:23.349Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-air  
+  
+ Sat Aug 11 2018 18:28:23 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:24.275Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-11T09:28:24.276Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-air/tokens  
+  
+ Sat Aug 11 2018 18:28:24 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:24.963Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-11T09:28:24.964Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/pwa-air  
+  
+ Sat Aug 11 2018 18:28:24 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:25.996Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/Aiden/Desktop/pwaaa'...
+[info] 
+[debug] [2018-08-11T09:28:25.998Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/9963603660/clients/_:getWebAppConfig  
+  
+ Sat Aug 11 2018 18:28:25 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:27.021Z] <<< HTTP RESPONSE 200
+[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
+[debug] [2018-08-11T09:28:27.036Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/9963603660/clients/_:getWebAppConfig  
+  
+ Sat Aug 11 2018 18:28:27 GMT+0900 (KST)
+[debug] [2018-08-11T09:28:28.044Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: /
+[info] ✔  hosting: Local server: http://localhost:5004
+
