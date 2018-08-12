@@ -1,23 +1,23 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <router-link to="/">PWAir</router-link>
+      <router-link to="/" @click.native="closeMenu()">PWAir</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <router-link to="/main">메인</router-link><span class="sr-only">(current)</span>
+          <li class="nav-item active ">
+            <router-link to="/main" @click.native="closeMenu()">메인</router-link><span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
-            <router-link to="/status">미세먼지</router-link>
+            <router-link to="/status" @click.native="closeMenu()">미세먼지</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/chart">주간차트</router-link>
+            <router-link to="/chart" @click.native="closeMenu()">주간차트</router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/login">로그인</router-link>
+          <li class="nav-item ">
+            <router-link to="/" @click.native="closeMenu(),logOut()" >로그인</router-link>
           </li>
         </ul>
       </div>
@@ -47,7 +47,21 @@
 // })
 
 export default {
-  
+  methods:{
+    closeMenu() {
+      $('#navbarNav').collapse('hide');
+    },
+    logOut(event) {
+        var self = this;
+        firebase.auth().signOut()
+        .then(function() {
+          console.log("you have been logged out")
+          self.$router.push({path : '/'});
+        }, function(error) {
+          console.log("error : ", error);
+        });
+      }
+  }
 }
 </script>
 

@@ -140,9 +140,12 @@ export default {
   .main { font-size: 20px; text-align: center;}
   img { width: 200px; padding: 20px;}
   .bottom {
-    background: #000;
+    background:rgba(255, 255, 255, 0.35);
     padding: 20px 0;
     font-size: 12px;
     margin-top: 50px;
+  }
+  .top{
+    z-index: 10;
   }
 </style>

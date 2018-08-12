@@ -3,18 +3,22 @@
     <h1> PWAir </h1>
     <form>
       <div class="form-group">
-        <label for="account" >Email address</label>
+        <label for="account" ></label>
         <input type="email" class="form-control" id="account" placeholder="name@example.com" v-model="email">
-      </div>
-      <div class="form-group">
-        <label for="password" >Password</label>
+        <label for="password" ></label>
         <input type="password" class="form-control" id="password" placeholder="password" v-model="password">
+        
       </div>
-      <button type="submit" class="btn btn-default basic" @click='loginWithInfo'>Sign in</button>
+      <div style="height:100px;position:relative; top:10px;">
+        <button type="submit" class="btn btn-default basic" @click='loginWithInfo'>Sign in</button>
+      </div>
       <!-- <a href=""><img src="../assets/images/google.png"></a>
       <a href=""><img src="../assets/images/facebook.png"></a> -->
-      <button type="submit" class="btn btn-primary" @click='loginWithInfo'>Sign in with Google</button>
-      <button type="submit" class="btn btn-primary" @click='loginWithInfo'>Sign in with Facebook</button>
+      
+      <button type="submit" class="btn btn-primary" @click='signInWithGoogle'>Google</button>
+      <button type="submit" class="btn btn-primary" @click='loginWithInfo'>Facebook</button>
+
+      
     </form>
   </div>
 </template>
@@ -27,6 +31,8 @@
   .login form .basic .btn-primary { border-color: #fff; color: #fff; }
   .login form .basic:hover { opacity: 0.8;}
   .login form img { width: 170px; }
+  .btn{border:1px solid white;}
+  button{width:100px;}
 </style>
 
 <script>
@@ -49,8 +55,13 @@
           }
           console.log(error);
         }).then(function (user) {
-          console.log(user, "has been logged");
-          self.$router.push({path: '/main'});
+          if(user){
+            console.log("you have logged in!" + user);
+            self.$router.push({path: '/main'});
+          }else{
+            console.log("you are not a user");
+          }
+          
           // location.href = "/home";
         });
       },
@@ -60,6 +71,20 @@
           return true;
         }
         return false;
+      },
+      signInWithGoogle() {
+        var self = this;
+        return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
+        .then(function(result){
+          if(result){
+            self.$router.push({path : '/main'});
+            console.log("you are logged in!" + result);
+          }else{
+            console.log("you are not a user");
+          }
+        }).catch(function(error){
+          console.log(error);
+        })
       },
     }
   }
