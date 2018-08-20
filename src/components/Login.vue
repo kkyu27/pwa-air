@@ -12,9 +12,6 @@
       <div style="height:100px;position:relative; top:10px;">
         <button type="submit" class="btn btn-default basic" @click='loginWithInfo'>Sign in</button>
       </div>
-      <!-- <a href=""><img src="../assets/images/google.png"></a>
-      <a href=""><img src="../assets/images/facebook.png"></a> -->
-      
       <button type="submit" class="btn btn-primary" @click='signInWithGoogle'>Google</button>
       <button type="submit" class="btn btn-primary" @click='loginWithInfo'>Facebook</button>
 
@@ -73,6 +70,7 @@
         return false;
       },
       signInWithGoogle() {
+        this.$store.state.loginStatus = 1;
         var self = this;
         return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(function(result){

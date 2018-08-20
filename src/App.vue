@@ -17,7 +17,8 @@
             <router-link to="/chart" @click.native="closeMenu()">주간차트</router-link>
           </li>
           <li class="nav-item ">
-            <router-link to="/" @click.native="closeMenu(),logOut()" >로그인</router-link>
+            <router-link to="/" @click.native="closeMenu(),logOut()" v-if="loginCheck != 1">로그인</router-link>
+            <router-link to="/" @click.native="closeMenu(),logOut()" v-else>로그아웃</router-link>
           </li>
         </ul>
       </div>
@@ -30,28 +31,18 @@
 </template>
 
 <script>
-// import Home from './components/Home.vue';
-// import Login from './components/Login.vue';
-// import Status from './components/Status.vue';
-// import Chart from './components/Chart.vue';
-// import VueRouter from 'vue-router';
-// const router = new VueRouter({
-//   mode: 'history',
-//   routes: [
-//     { path:'/', component: Home},
-//     { path:'/home', component: Home},
-//     { path:'/status', component: Status},
-//     { path:'/chart', component: Chart},
-//     { path:'/login', component: Login}
-//   ]
-// })
-
-export default {
-  methods:{
-    closeMenu() {
-      $('#navbarNav').collapse('hide');
+  export default {
+    computed : {
+      loginCheck() {
+        return this.$store.state.loginStatus
+      }
     },
-    logOut(event) {
+    methods:{
+      closeMenu() {
+        $('#navbarNav').collapse('hide');
+      },
+      logOut(event) {
+        this.$store.state.loginStatus = 0;
         var self = this;
         firebase.auth().signOut()
         .then(function() {
@@ -61,8 +52,8 @@ export default {
           console.log("error : ", error);
         });
       }
+    }
   }
-}
 </script>
 
 <style>

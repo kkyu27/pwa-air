@@ -42,3 +42,18 @@ self.addEventListener('fetch', function(event) {
       })
     );
 });
+
+self.addEventListener('activate', function(event) {
+  var cacheWhitelist = ['pwa-cache-v1'];
+  event.waitUntil(
+    caches.keys().then(function(CACHE_NAME) {
+      return Promise.all(
+        CACHE_NAME.map(function(CACHE_NAME) {
+          if (cacheWhitelist.indexOf(CACHE_NAME) === -1) {
+            return caches.delete(CACHE_NAME);
+          }
+        })
+      );
+    })
+  );
+});
