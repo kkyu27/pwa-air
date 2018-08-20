@@ -8,22 +8,28 @@
     <div>
       <div class="row bottom">
         <div class="col-4 col-md-4">
-          <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
+          <!-- <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
           <img src="../assets/images/soso.png" v-else-if="AirInfo.IDEX_NM =='보통'"/>
-          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/>
-          미세먼지
+          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/> -->
+          <img src="../assets/images/good.png"/>
+          <p>미세먼지</p>
+          {{AirInfo.PM10}}
         </div>
         <div class="col-4 col-md-4">
-          <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
+          <!-- <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
           <img src="../assets/images/soso.png" v-else-if="AirInfo.IDEX_NM =='보통'"/>
-          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/>
-          오존
+          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/> -->
+          <img src="../assets/images/soso.png">
+          <p>오존</p>
+           {{AirInfo.O3}}
         </div>
         <div class="col-4 col-md-4">
-          <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
+          <!-- <img src="../assets/images/bad.png" v-if="AirInfo.IDEX_NM=='나쁨'"/>
           <img src="../assets/images/soso.png" v-else-if="AirInfo.IDEX_NM =='보통'"/>
-          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/>
-          초미세먼지
+          <img src="../assets/images/good.png" v-else-if="AirInfo.IDEX_NM =='좋음'"/> -->
+          <img src="../assets/images/bad.png">
+          <p>초미세먼지</p>
+           {{AirInfo.PM25}}
         </div>
       </div>
     </div>
@@ -52,9 +58,9 @@ export default {
       AirInfo : {
         MSRDT: '201706291700',
         IDEX_NM: '나쁨',
-        PM10: null,
-        PM25: null,
-        O3: null
+        PM10: 10.0,
+        PM25: 27.0,
+        O3: 0.024
       },
       appStyle : {
         background: '#2772DB',

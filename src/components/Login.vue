@@ -44,6 +44,7 @@
       loginWithInfo(event) {
         var self = this;
         if (this.loginExceptionHandler()) return true;
+        this.$store.state.loginStatus = 1;
         return firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
           if (error.code === 'auth/wrong-password') {
             alert('Wrong password.');
@@ -70,8 +71,8 @@
         return false;
       },
       signInWithGoogle() {
-        this.$store.state.loginStatus = 1;
         var self = this;
+        this.$store.state.loginStatus = 1;
         return firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then(function(result){
           if(result){

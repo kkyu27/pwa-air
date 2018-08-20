@@ -8,16 +8,16 @@
       return {
         datacollection: {
         //Data to be represented on x-axis
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], 
+          labels: ['2일전', '1일전', '오늘'], 
           datasets: [
             {
-              label: 'Data One',
+              label: '미세먼지 농도',
               backgroundColor: '#f87979',
               pointBackgroundColor: 'white',
               borderWidth: 1,
               pointBorderColor: '#fff',
               //Data to be represented on y-axis
-              data: [40, 20, 30, 50, 90, 10, 20, 40, 50, 70, 90, 100]
+              data: [5, 15, 10]
             }
           ]
         },
