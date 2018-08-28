@@ -1,37 +1,44 @@
-[debug] [2018-08-11T09:28:23.333Z] ----------------------------------------------------------------------
-[debug] [2018-08-11T09:28:23.337Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] [2018-08-11T09:28:23.337Z] CLI Version:   4.0.3
-[debug] [2018-08-11T09:28:23.337Z] Platform:      darwin
-[debug] [2018-08-11T09:28:23.337Z] Node Version:  v8.11.3
-[debug] [2018-08-11T09:28:23.337Z] Time:          Sat Aug 11 2018 18:28:23 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:23.337Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T06:53:32.186Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T06:53:32.188Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-08-28T06:53:32.189Z] CLI Version:   4.2.0
+[debug] [2018-08-28T06:53:32.189Z] Platform:      win32
+[debug] [2018-08-28T06:53:32.189Z] Node Version:  v8.11.3
+[debug] [2018-08-28T06:53:32.189Z] Time:          Tue Aug 28 2018 15:53:32 GMT+0900 (대한민국 표준시)
+[debug] [2018-08-28T06:53:32.189Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-08-11T09:28:23.347Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-08-11T09:28:23.347Z] > authorizing via signed-in user
-[debug] [2018-08-11T09:28:23.349Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-air  
-  
- Sat Aug 11 2018 18:28:23 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:24.275Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-11T09:28:24.276Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/pwa-air/tokens  
-  
- Sat Aug 11 2018 18:28:24 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:24.963Z] <<< HTTP RESPONSE 200
-[debug] [2018-08-11T09:28:24.964Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/pwa-air  
-  
- Sat Aug 11 2018 18:28:24 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:25.996Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T06:53:32.198Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-28T06:53:32.198Z] > authorizing via signed-in user
+[debug] [2018-08-28T06:53:32.200Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/pwa-air  
+ 
+[debug] [2018-08-28T06:53:33.152Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from '/Users/Aiden/Desktop/pwaaa'...
+[info] === Deploying to 'pwa-air'...
 [info] 
-[debug] [2018-08-11T09:28:25.998Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/9963603660/clients/_:getWebAppConfig  
-  
- Sat Aug 11 2018 18:28:25 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:27.021Z] <<< HTTP RESPONSE 200
-[warn] ⚠  hosting: Port 5000 is not available. Trying another port...
-[debug] [2018-08-11T09:28:27.036Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/9963603660/clients/_:getWebAppConfig  
-  
- Sat Aug 11 2018 18:28:27 GMT+0900 (KST)
-[debug] [2018-08-11T09:28:28.044Z] <<< HTTP RESPONSE 200
-[info] i  hosting: Serving hosting files from: /
-[info] ✔  hosting: Local server: http://localhost:5004
+[info] i  deploying database, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-08-28T06:53:33.158Z] >>> HTTP REQUEST PUT https://pwa-air.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2018-08-28T06:53:34.082Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database pwa-air is valid
+[debug] [2018-08-28T06:53:34.086Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/pwa-air/versions  
 
+[debug] [2018-08-28T06:53:35.712Z] <<< HTTP RESPONSE 200
+[info] i  hosting[pwa-air]: beginning deploy...
+[debug] [2018-08-28T06:53:36.127Z] Error: EPERM: operation not permitted, scandir 'C:\$Recycle.Bin\S-1-5-18'
+    at Object.fs.readdirSync (fs.js:904:18)
+    at GlobSync._readdir (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:288:41)
+    at GlobSync._readdirInGlobStar (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:245:17)
+    at GlobSync._readdir (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:276:17)
+    at GlobSync._processReaddir (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:137:22)
+    at GlobSync._process (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:132:10)
+    at GlobSync._processGlobStar (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:380:10)
+    at GlobSync._process (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+    at GlobSync._processGlobStar (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:383:10)
+    at GlobSync._process (C:\Users\ktc m\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\glob\sync.js:130:10)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -6,14 +6,18 @@
     "public": "/",
     "ignore": [
       "firebase.json",
+      "database-rules.json",
+      "storage.rules",
+      "functions",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
+    "headers": [{
+      "source" : "**/*.@(js|html)",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=0"
+      } ]
+    }]
   }
 }
