@@ -59,8 +59,6 @@
           }else{
             console.log("you are not a user");
           }
-          
-          // location.href = "/home";
         });
       },
       loginExceptionHandler() {
